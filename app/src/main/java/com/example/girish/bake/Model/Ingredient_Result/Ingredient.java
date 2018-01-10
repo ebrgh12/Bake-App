@@ -1,4 +1,4 @@
-package com.example.girish.bake.Model;
+package com.example.girish.bake.Model.Ingredient_Result;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
