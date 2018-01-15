@@ -79,4 +79,17 @@ public class BakeResponse {
         this.image = image;
     }
 
+    public BakeResponse(Integer id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    public BakeResponse(Integer id, String name, List<Ingredient> ingredients, List<Step> steps, Integer servings, String image) {
+        this.id = id;
+        this.name = name;
+        this.ingredients = ingredients;
+        this.steps = steps;
+        this.servings = servings;
+        this.image = image;
+    }
 }
