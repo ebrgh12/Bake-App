@@ -13,8 +13,6 @@ App uses RecyclerView and can handle recipe steps that include videos or images.
 
 # Components and Libraries
 
-CRITERIA
-MEETS SPECIFICATIONS
 Master Detail Flow and Fragments
 
 Application uses Master Detail Flow to display recipe steps and navigation between them.
