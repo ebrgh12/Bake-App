@@ -45,11 +45,12 @@ public class MainActivity extends AppCompatActivity {
                 if(response.isSuccessful()){
                     if(response.body().size() != 0 && ! response.body().isEmpty()){
                         for(int i=0;i<response.body().size();i++){
-                            mListDataModels.add(new BakeResponse(response.body().get(i).getId(),response.body().get(i).getName()));
-                            Log.d(TAG,mListDataModels.get(i).getName());
+                            mListDataModels.add(new BakeResponse(response.body().get(i).getId(),
+                                    response.body().get(i).getName(),response.body().get(i).getIngredients(),
+                                    response.body().get(i).getSteps(),response.body().get(i).getServings()));
+                            Log.d(TAG,mListDataModels.get(i).getName()+mListDataModels.get(i).getId());
                         }
                     }
-
                 }
             }
             @Override

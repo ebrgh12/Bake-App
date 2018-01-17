@@ -84,12 +84,12 @@ public class BakeResponse {
         this.name = name;
     }
 
-    public BakeResponse(Integer id, String name, List<Ingredient> ingredients, List<Step> steps, Integer servings, String image) {
+    public BakeResponse(Integer id, String name, List<Ingredient> ingredients, List<Step> steps, Integer servings) {
         this.id = id;
         this.name = name;
         this.ingredients = ingredients;
         this.steps = steps;
         this.servings = servings;
-        this.image = image;
+
     }
 }
