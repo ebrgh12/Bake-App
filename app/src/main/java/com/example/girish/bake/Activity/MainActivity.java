@@ -2,9 +2,12 @@ package com.example.girish.bake.Activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.example.girish.bake.Adapter.BakeAdapter;
 import com.example.girish.bake.Model.BakeResponse;
 import com.example.girish.bake.R;
 import com.example.girish.bake.Rest.ApiClient;
@@ -25,16 +28,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         // API :   https://d17h27t6h515a5.cloudfront.net/topher/2017/May/59121517_baking/baking.json
-     /*
-        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.movies_recycler_view);
+
+        // Recycler View
+        final RecyclerView recyclerView = (RecyclerView) findViewById(R.id.main_recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-    */
-       // Log.d(TAG,"Succesfull Network call from Bake");
+
+
 
         ApiInterface apiService = ApiClient.getClient().create(ApiInterface.class);
-
         Call<List<BakeResponse>> call = apiService.getResponse();
-
 
         call.enqueue(new Callback<List<BakeResponse>>() {
             @Override
@@ -52,6 +54,8 @@ public class MainActivity extends AppCompatActivity {
                         }
                     }
                 }
+
+                recyclerView.setAdapter(new BakeAdapter(mListDataModels, R.layout.main_list, getApplicationContext()));
             }
             @Override
             public void onFailure(Call<List<BakeResponse>>call, Throwable t) {

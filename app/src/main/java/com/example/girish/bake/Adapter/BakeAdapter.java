@@ -8,17 +8,21 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.girish.bake.R;
+
+import java.util.List;
+
 
 public class BakeAdapter extends RecyclerView.Adapter<BakeAdapter.MovieViewHolder> {
 
-    private List<Movie> movies;
+    private List<BakeAdapter> bakeResults;
     private int rowLayout;
     private Context context;
 
 
     public static class MovieViewHolder extends RecyclerView.ViewHolder {
-        LinearLayout moviesLayout;
-        TextView movieTitle;
+        LinearLayout bakeLayout;
+        TextView bakeName;
         TextView data;
         TextView movieDescription;
         TextView rating;
@@ -26,16 +30,16 @@ public class BakeAdapter extends RecyclerView.Adapter<BakeAdapter.MovieViewHolde
 
         public MovieViewHolder(View v) {
             super(v);
-            moviesLayout = (LinearLayout) v.findViewById(R.id.movies_layout);
-            movieTitle = (TextView) v.findViewById(R.id.title);
-            data = (TextView) v.findViewById(R.id.subtitle);
-            movieDescription = (TextView) v.findViewById(R.id.description);
-            rating = (TextView) v.findViewById(R.id.rating);
+            bakeLayout = (LinearLayout) v.findViewById(R.id.movies_layout);
+            bakeName = (TextView) v.findViewById(R.id.title);
+            //data = (TextView) v.findViewById(R.id.subtitle);
+            //movieDescription = (TextView) v.findViewById(R.id.description);
+            //rating = (TextView) v.findViewById(R.id.rating);
         }
     }
 
-    public BakeAdapter(List<Movie> movies, int rowLayout, Context context) {
-        this.movies = movies;
+    public BakeAdapter(List<BakeAdapter> bakeResults, int rowLayout, Context context) {
+        this.bakeResults = bakeResults;
         this.rowLayout = rowLayout;
         this.context = context;
     }
@@ -50,14 +54,14 @@ public class BakeAdapter extends RecyclerView.Adapter<BakeAdapter.MovieViewHolde
 
     @Override
     public void onBindViewHolder(MovieViewHolder holder, final int position) {
-        holder.movieTitle.setText(movies.get(position).getTitle());
-        holder.data.setText(movies.get(position).getReleaseDate());
-        holder.movieDescription.setText(movies.get(position).getOverview());
-        holder.rating.setText(movies.get(position).getVoteAverage().toString());
+        holder.bakeName.setText(bakeResults.get(position).);
+      //  holder.data.setText(bakeResults.get(position).getReleaseDate());
+       // holder.movieDescription.setText(bakeResults.get(position).getOverview());
+        //holder.rating.setText(bakeResults.get(position).getVoteAverage().toString());
     }
 
     @Override
     public int getItemCount() {
-        return movies.size();
+        return bakeResults.size();
     }
 }
