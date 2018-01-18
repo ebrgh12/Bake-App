@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.example.girish.bake.Model.BakeResponse;
 import com.example.girish.bake.R;
 
 import java.util.List;
@@ -15,7 +16,7 @@ import java.util.List;
 
 public class BakeAdapter extends RecyclerView.Adapter<BakeAdapter.MovieViewHolder> {
 
-    private List<BakeAdapter> bakeResults;
+    private List<BakeResponse> bakeResults;
     private int rowLayout;
     private Context context;
 
@@ -38,7 +39,7 @@ public class BakeAdapter extends RecyclerView.Adapter<BakeAdapter.MovieViewHolde
         }
     }
 
-    public BakeAdapter(List<BakeAdapter> bakeResults, int rowLayout, Context context) {
+    public BakeAdapter(List<BakeResponse> bakeResults, int rowLayout, Context context) {
         this.bakeResults = bakeResults;
         this.rowLayout = rowLayout;
         this.context = context;
@@ -54,7 +55,7 @@ public class BakeAdapter extends RecyclerView.Adapter<BakeAdapter.MovieViewHolde
 
     @Override
     public void onBindViewHolder(MovieViewHolder holder, final int position) {
-        holder.bakeName.setText(bakeResults.get(position).);
+        holder.bakeName.setText(bakeResults.get(position).getName());
       //  holder.data.setText(bakeResults.get(position).getReleaseDate());
        // holder.movieDescription.setText(bakeResults.get(position).getOverview());
         //holder.rating.setText(bakeResults.get(position).getVoteAverage().toString());
