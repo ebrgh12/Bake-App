@@ -7,7 +7,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.girish.bake.Activity.MainActivity;
 import com.example.girish.bake.Model.BakeResponse;
 import com.example.girish.bake.R;
 
@@ -15,7 +17,7 @@ import java.util.List;
 
 
 public class BakeAdapter extends RecyclerView.Adapter<BakeAdapter.MovieViewHolder> {
-
+final String TAG="RecyclerView";
     private List<BakeResponse> bakeResults;
     private int rowLayout;
     private Context context;
@@ -59,6 +61,21 @@ public class BakeAdapter extends RecyclerView.Adapter<BakeAdapter.MovieViewHolde
       //  holder.data.setText(bakeResults.get(position).getReleaseDate());
        // holder.movieDescription.setText(bakeResults.get(position).getOverview());
         //holder.rating.setText(bakeResults.get(position).getVoteAverage().toString());
+
+        holder.bakeName.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Toast.makeText(context, "Hello", Toast.LENGTH_SHORT).show();
+               /*
+                mainActivity.callDetailPage(
+                        "http://image.tmdb.org/t/p/w342/"+movieListDataModels.get(position).getImagePath(),
+                        movieListDataModels.get(position).getUserRating(),
+                        movieListDataModels.get(position).getMovieName(),
+                        movieListDataModels.get(position).getDescription(),
+                        movieListDataModels.get(position).getReleaseDate());
+            */
+            }
+        });
     }
 
     @Override
