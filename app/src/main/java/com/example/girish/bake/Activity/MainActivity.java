@@ -1,5 +1,6 @@
 package com.example.girish.bake.Activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -55,7 +56,8 @@ public class MainActivity extends AppCompatActivity {
                     }
                 }
 
-                recyclerView.setAdapter(new BakeAdapter(mListDataModels, R.layout.main_list, getApplicationContext()));
+                recyclerView.setAdapter(new BakeAdapter(mListDataModels,MainActivity.this, R.layout.main_list, getApplicationContext()));
+
             }
             @Override
             public void onFailure(Call<List<BakeResponse>>call, Throwable t) {
@@ -65,4 +67,18 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+//mainActivity.callDetailPage(
+                      //  bakeResults.get(position).getIngredients(),
+                      //  bakeResults.get(position).getSteps(),
+                      //  bakeResults.get(position).getName(),
+                      //  bakeResults.get(position).getId());
+
+    public void callDetailPage(){
+
+            Intent i = new Intent(this,Main2Activity.class);
+
+            startActivity(i);
+
+    }
+
 }
