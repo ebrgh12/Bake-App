@@ -31,7 +31,7 @@ Application should properly retrieve media assets from the provided network link
 
 UI Testing
 
-Application makes use of Espresso to test aspects of the UI.
+Application makes use of Espresso/UI Automater to test aspects of the UI.
 
 Third-party libraries
 
