@@ -33,6 +33,3 @@ UI Testing
 
 Application makes use of Espresso/UI Automater to test aspects of the UI.
 
-Third-party libraries
-
-Application sensibly utilizes a third-party library to enhance the app's features. That could be helper library to interface with ContentProviders if you choose to store the recipes, a UI binding library to avoid writing findViewById a bunch of times, or something similar.
