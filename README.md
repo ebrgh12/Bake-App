@@ -5,7 +5,7 @@ App should display recipes from provided network resource.
 
 App Navigation
 
-App should allow navigation between individual recipes and recipe steps.
+App allows navigation between individual recipes and recipe steps.
 
 Utilization of RecyclerView
 
@@ -31,8 +31,5 @@ Application should properly retrieve media assets from the provided network link
 
 UI Testing
 
-Application makes use of Espresso to test aspects of the UI.
+Application makes use of Espresso/UI Automater to test aspects of the UI.
 
-Third-party libraries
-
-Application sensibly utilizes a third-party library to enhance the app's features. That could be helper library to interface with ContentProviders if you choose to store the recipes, a UI binding library to avoid writing findViewById a bunch of times, or something similar.
